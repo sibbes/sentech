@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.95" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.95/virl.xsd">
+    <node name="asav-1" type="SIMPLE" subtype="ASAv" location="313,221">
+        <interface id="0" name="GigabitEthernet0/0"/>
+        <interface id="1" name="GigabitEthernet0/1"/>
+    </node>
+    <node name="asav-2" type="SIMPLE" subtype="ASAv" location="494,227">
+        <interface id="0" name="GigabitEthernet0/0"/>
+        <interface id="1" name="GigabitEthernet0/1"/>
+    </node>
+    <node name="iosvl2-1" type="SIMPLE" subtype="IOSvL2" location="407,327">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet1/0"/>
+    </node>
+    <node name="iosvl2-2" type="SIMPLE" subtype="IOSvL2" location="406,142">
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+    </node>
+    <node name="csr1000v-1" type="SIMPLE" subtype="CSR1000v" location="404,56">
+        <interface id="0" name="GigabitEthernet2"/>
+    </node>
+    <node name="csr1000v-2" type="SIMPLE" subtype="CSR1000v" location="621,323">
+        <interface id="0" name="GigabitEthernet2"/>
+    </node>
+    <node name="csr1000v-3" type="SIMPLE" subtype="CSR1000v" location="409,445">
+        <interface id="0" name="GigabitEthernet2"/>
+    </node>
+    <annotations>
+        <rect x="540" y="242" radius="10" width="272" height="158" fill="CCCCCC" stroke-width="3"/>
+        <text x="684" y="267" font-size="18">DMZ</text>
+        <rect x="320" y="389" radius="10" width="198" height="127" fill="CCCCCC" stroke-width="3"/>
+        <text x="351" y="496" font-size="18">Internal</text>
+        <rect x="320" y="9" radius="10" width="208" height="96" fill="CCCCCC" stroke-width="3"/>
+        <text x="402" y="21" font-size="18">External</text>
+        <text x="344" y="471" font-size="18">10.0.0.0/24</text>
+        <text x="623" y="371" font-size="18">172.16.0.0/24</text>
+        <text x="427" y="86" font-size="18">200.0.0.0/24</text>
+    </annotations>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[2]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[2]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[4]"/>
+</topology>
